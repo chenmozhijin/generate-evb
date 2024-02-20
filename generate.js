@@ -161,7 +161,7 @@ function generateDirTreeXml(path2Pack, dirTemplate, fileTemplate, filter) {
 //         - shareVirtualSystem (Boolean) - defaults to false
 //         - mapExecutableWithTemporaryFile (Boolean) - defaults to true
 //         - allowRunningOfVirtualExeFiles (Boolean) - defaults to true
-module.exports = function generate(projectName, inputExe, outputExe, path2Pack, options) {
+module.exports = function generate(inputExe, outputExe, path2Pack, evbFilePath, options) {
     // Merge options with defaults
     options = mergeOptions({
         filter: defaultFilter,
@@ -205,5 +205,6 @@ module.exports = function generate(projectName, inputExe, outputExe, path2Pack, 
     // fs.writeFile doesn't do that, but it doesn't seem to cause any issue with Enigma. If an issue related to the
     // missing BOM arises, we can add it by prepending '\ufeff' to projectTemplate (for details see:
     // http://stackoverflow.com/a/27975629)
-    fs.writeFileSync(resolvePath(projectName), projectTemplate, 'ucs2');
+    fs.writeFileSync(resolvePath(evbFilePath), projectTemplate, 'ucs2');
 };
+

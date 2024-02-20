@@ -2,10 +2,10 @@ const core = require('@actions/core');
 const generate = require('./generate.js');
 
 try {
-  const projectName = core.getInput('projectName');
   const inputExe = core.getInput('inputExe');
   const outputExe = core.getInput('outputExe');
   const path2Pack = core.getInput('path2Pack');
+  const evbFilePath = core.getInput('evbFilePath');
   const deleteExtractedOnExit = core.getInput('deleteExtractedOnExit');
   const compressFiles = core.getInput('compressFiles');
   const shareVirtualSystem = core.getInput('shareVirtualSystem');
@@ -22,7 +22,7 @@ try {
     }
   };
 
-  generate(projectName, inputExe, outputExe, path2Pack, options);
+  generate(inputExe, outputExe, path2Pack, evbFilePath, options);
 } catch (error) {
   core.setFailed(error.message);
 }

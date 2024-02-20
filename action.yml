@@ -1,9 +1,6 @@
 name: 'Generate evb'
 description: 'Generate an "Enigma Virtual Box" project file'
 inputs:
-  projectName:
-    description: 'Project name'
-    required: true
   inputExe:
     description: 'Input executable'
     required: true
@@ -12,6 +9,9 @@ inputs:
     required: true
   path2Pack:
     description: 'Path to pack'
+    required: true
+  evbFilePath:
+    description: 'Saved evb file path'
     required: true
   deleteExtractedOnExit:
     description: 'Delete extracted files on exit (true/false)'
