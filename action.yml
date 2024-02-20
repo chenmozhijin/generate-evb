@@ -1,0 +1,33 @@
+name: 'Generate evb'
+description: 'Generate an "Enigma Virtual Box" project file'
+inputs:
+  projectName:
+    description: 'Project name'
+    required: true
+  inputExe:
+    description: 'Input executable'
+    required: true
+  outputExe:
+    description: 'Output executable'
+    required: true
+  path2Pack:
+    description: 'Path to pack'
+    required: true
+  deleteExtractedOnExit:
+    description: 'Delete extracted files on exit (true/false)'
+    required: false
+  compressFiles:
+    description: 'Compress files (true/false)'
+    required: false
+  shareVirtualSystem:
+    description: 'Share virtual system (true/false)'
+    required: false
+  mapExecutableWithTemporaryFile:
+    description: 'Map executable with temporary file (true/false)'
+    required: false
+  allowRunningOfVirtualExeFiles:
+    description: 'Allow running of virtual exe files (true/false)'
+    required: false
+runs:
+  using: 'node20'
+  main: 'index.js'
